@@ -1,0 +1,394 @@
+<Html> 
+    <head>
+    <style>
+    
+        *{
+           margin: 0;
+           padding: 0;
+        }
+        
+        .userform{
+            padding: 40px 0px;
+        }
+       form{
+          width:45%;
+          padding:1rem 2rem;
+          margin: auto;
+          background: #12c2e9;  /* fallback for old browsers */
+          background: -webkit-linear-gradient(to top, #f64f59, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
+          background: linear-gradient(to top, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+       }
+       .form_row{
+          display: flex;
+          flex-direction: column;
+          margin: 10px 0px;
+       }
+       .form_inline{
+          display: flex; 
+          margin: 10px 0px;
+          align-items: center;
+       }
+       .form_row label{
+          font-size: 20px;
+          margin-bottom: 8px;
+          letter-spacing: 1px;
+       }
+       .form_inline label{
+          font-size: 20px;
+          letter-spacing: 1px;
+       }
+       .form_row input,
+        .form_inline input{
+           height: 40px;
+           border-radius: 5px;
+           background-color: #fff;
+           border: none;
+       }
+       .form_row textarea{
+           border-radius: 5px;
+       }
+       
+       form .mr{
+           margin-right: 8px;
+           width: 18%;
+       }
+       form .phone_no{
+          width: 80%;
+       }
+       
+       .form_btn{
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           margin-top: 10px;
+       }
+       .form_btn input{
+           width: 20%;
+           height: 30px;
+           border-radius: 5px;
+           border: none;
+           background-color: #000;
+           color: #fff;
+       }
+       
+       
+       header{
+           background-color: #fff;
+           padding: 8px 20px;
+           height: 5vh;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+       }
+        header nav{
+            background-color: none;
+            width: 90%;
+            margin: auto;
+        }
+       header nav ul{
+          list-style: none;
+          display: flex;
+           align-items: center;
+           justify-content: space-between;
+           
+           
+       }
+       
+       header nav ul li a{
+           color: #000;
+           font-size: 22px;
+           letter-spacing: 1px;
+           opacity: 0.8;
+           text-decoration: none;
+           text-transform: capitalize;
+           text-shadow: none;
+           
+       }
+       
+       
+       .banner{
+          padding: 30px 10px;
+          text-align: center;
+          
+       }
+       
+       .banner h2{
+           font-size: 60px;
+           font-weight: 600;
+           color: #fff;
+       }
+       
+       .banner p{
+          width: 50%;
+          margin: 5px auto;
+          font-size: 25px;
+          color: #000;
+          letter-spacing: 1px;
+          line-height: 35px;
+          font-weight: 500;
+       }
+       .banner button{
+          width: 200px;
+          height: 40px;
+          margin-top: 30px;
+       }
+       
+       
+       
+       .modal{
+          position: fixed;
+          top: -100%;
+          left: 0;
+          width: 100%;
+          padding: 40px 50px;
+          background-color: #fff;
+          z-index: 10;
+          transition: .5s ease-in-out;
+       }
+       .modal.scrolled{
+          top: 0% !important;
+       }
+       
+       .modal_header{
+           margin-top: 10px;
+           margin-bottom: 20px;
+       }
+       .modal_header h1{
+          font-size: 60px;
+          letter-spacing: 1px;
+       } 
+       
+       .modal_header p{
+          font-size: 24px;
+          letter-spacing: 1px;
+          
+       } 
+       
+       .modal .deals{
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+           width: 95%;
+       }
+       
+       .coupon_box{
+           background-color: none;
+           width: 80%;
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+       }
+       
+       .coupon_box .coupon{
+           border: 1px solid rgba(0,0,0,0.3);
+           padding: 10px 10px;
+           border-radius: 6px;
+           width: 24%;
+           margin-right: 2%;
+       }
+       
+       .coupon_box .coupon button{
+          width: 80%;
+          height: 40px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin: 20px auto;
+          border-radius: 2rem;
+          border: none;
+          margin-left: 30px;
+          margin-bottom: 50px;
+       }
+	   
+       
+       .close_icon{
+           width: 20%;
+           text-align: right;
+           background-color: none;
+       }
+    </style>
+    </head>   
+    <body bgcolor="Lightskyblue">  
+    
+    <div class="modal ">
+       <div class="modal_container">
+           <div class="modal_header">
+               <h1>More deals for you</h1>
+               <p>more discounts for </p>
+           </div>
+           <div class="deals">
+              <div class="coupon_box">
+                  <div class="coupon">
+                     <h2>flat</h2>
+                     <h1>Rs 4000 off</h1>
+                     <span class="code">*terms and conditions applied</span>
+					 <div class="couponOne">MMMT56TGYL</div>
+                      <input type="text" class="text" value="MMMT56TGYL" readonly>
+                     <button id="copyCode">copy code</button>
+                  </div>
+                  <div class="coupon">
+                     <h2>flat</h2>
+                     <h1>Rs 1000 off</h1>
+                      <span class="code">*offer valid till 31st september</span>
+                      <span class="couponOne">MMHT56TY</span>
+                     <button onclick="copyToClipboard('MMHT56TY')">copy code</button>
+                  </div>
+                  <div class="coupon">
+                     <h2>flat</h2>
+                     <h1>Rs 5500 off</h1>
+                      <span class="code">*Valid on 3 tickets minimum</span>
+                      <span class="couponOne">MMMT589TY</span>
+                     <button onclick="copyToClipboard('MMMT589TY')">copy code</button>
+                  </div>
+                  <div class="coupon">
+                     <h2>flat</h2>
+                     <h1>Rs 2200 off</h1>
+                      <span class="code">*Valid on 2 tickets minimum</span>
+                      <span class="couponOne">MMMT589TCY</span>
+                     <button onclick="copyToClipboard('MMMT589TCY')">copy code</button>
+                  </div>
+              </div>
+              <div class="close_icon">
+                  <span id="close_modal">close</span>
+              </div>
+           </div>
+       </div>
+    </div>
+    
+    
+    <header>
+        <nav>
+            <ul>
+               <li>
+                   <a href="#">User</a>
+               </li>
+               <li>
+                   <a href="#">home</a>
+               </li>
+               <li>
+                   <a href="#">portfolio</a>
+               </li>
+               <li>
+                   <a href="#">About us</a>
+               </li>
+               <li>
+                   <a href="#">Support</a>
+               </li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    <section class='banner'>
+        <h2>Punny headline</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
+        software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <button> coming soon </button>
+    </section>
+    
+    <section class="userform">  
+     <form>  
+    
+    <div class="form_row">  
+    <label> Firstname </label>         
+    <input type="text" name="firstname" /> 
+    </div>
+    
+    <div class="form_row">   
+    <label> Middlename: </label>     
+    <input type="text" name="middlename" /> 
+    </div>
+    <div class="form_row">   
+    <label> Lastname: </label>         
+    <input type="text" name="lastname" />
+    </div>
+    
+    
+    <div class="form_inline">
+    <label>   
+    Gender :  
+    </label>  
+    <input type="radio" name="male"/> <label>Male</label> 
+    <input type="radio" name="female"/> <label>Female </label> 
+    <input type="radio" name="other"/> <label>Other </label> 
+    </div>
+     
+    <div class="form_row">   
+    <label>   
+    Phone :  
+    </label>
+    <div class="form_inline">  
+    <input type="text" name="country code"  value="+91" size="2"  class="mr"/>   
+    <input type="text" name="phone" size="10" class="phone_no"/>
+    </div>
+    </div>
+    
+    <div class="form_row">  
+    <label>
+    Address
+    </label>  
+    <textarea cols="80" rows="5" value="address">  
+    </textarea>  
+    </div>
+    
+    <div class="form_row">  
+    <label>  
+    Email: 
+    </label> 
+    <input type="email" id="email" name="email"/> 
+    </div>
+    
+    <div class="form_row">  
+    <label>
+    Password:  
+    </label>
+    <input type="Password" id="pass" name="pass"> <br>   
+    </div>
+    
+    <div class="form_row">  
+    <label> 
+    Re-type password:  
+    </label>
+    <input type="Password" id="repass" name="repass"> 
+    </div>
+    
+    <div class="form_btn">  
+    <input type="button" value="Submit"/>  
+    </div>
+    </form>  
+    </section>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    
+    <script>
+       $(window).scroll(function(){
+            $('.modal').toggleClass('scrolled',$(this).scrollTop() > 50)
+       });
+       
+       $("#close_modal").click(function(){
+         
+          $('.modal').toggle('scrolled');
+       })
+    </script>
+    
+    <script>
+    
+    
+
+    function copyToClipboard(text) {
+        var dummy = document.createElement("textarea");
+        
+        document.body.appendChild(dummy);
+        dummy.value = text;
+        dummy.select();
+        document.execCommand("copy");
+        document.body.removeChild(dummy);
+    }
+    
+    </script>
+    
+    </body>  
+    </html>

@@ -1,0 +1,35 @@
+<p>By using below &quot;data&quot; variable, solve given sub questions.</p>
+
+<p>Required JSON Data is available in &quot;data&quot; variable.</p>
+
+<p>You can access &quot;data&quot; variable like this: &quot;[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]&quot;</p>
+
+<p>Sub questions --&gt;<br />
+1. For all the users whose &quot;id&quot; is greater than 4, print following,<br />
+&gt;&gt;&gt; if &quot;id&quot; is even print &quot;[id] : [username] is even&quot;<br />
+&gt;&gt;&gt; else print &quot;I&#39;m Odd&quot;</p>
+
+<p><br />
+{% if id&gt;4 &amp; id%2==0 %}<br />
+&nbsp; &quot;username&quot; is even<br />
+{% else %}<br />
+&nbsp; I am odd<br />
+{% endif %}</p>
+
+<p><br />
+2. if &quot;lng&quot; attribute (I.e. address -&gt; geo -&gt; lng) is negative, print following,<br />
+&gt;&gt;&gt; &quot;[username] : [city] : [lng]&quot;</p>
+
+<p><br />
+{% if not LNG %}<br />
+&nbsp; &quot;username&quot; : &quot;city&quot; : &quot;lng&quot;<br />
+{% endif %}</p>
+
+<p>3. if &quot;email&quot; ends with &quot;.biz&quot; print following,<br />
+&gt;&gt;&gt; &quot;[name] : [email] : [company]&quot;</p>
+
+<p>4. if &quot;city&quot; contains any name from the following list -&gt; (&quot;Aliyaview&quot;, &quot;Howemouth&quot;, Gwenborough) print following,<br />
+&gt;&gt;&gt; if numeral value inside &quot;suite&quot; is greater than 500 print &quot;[username] : [email] : [suite]&quot;<br />
+example -&gt; suite: &quot;Suite 729&quot; will print &quot;Maxime_Nienow Sherwood@rosamond.me Suite 729&quot;</p>
+
+<p>5. Print CatchPhrase(I.e. company -&gt; catchPhrase) which will contain max 15 letters.</p>
